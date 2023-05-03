@@ -7,5 +7,4 @@ import org.apache.sling.models.annotations.Model;
 public class Cost {
 
 
-
 }
