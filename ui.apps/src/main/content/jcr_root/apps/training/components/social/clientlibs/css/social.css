@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  
+  font-family: sans-serif;
+}
+
+.counter {
+font-size:40px;
+  display: flex;
+  gap: 50px;
+}
+
+.logo {
+  font-size: 40px;
+}
+
+.insta, .youtube, .twitter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+}
+
+.twitter {
+  color: rgb(67, 192, 255);
+}
+
+.youtube {
+  color: rgb(255, 90, 90);
+}
+
+.insta {
+  color:rgb(113, 143, 251);
+}
+

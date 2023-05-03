@@ -1,0 +1,9 @@
+
+<div data-sly-test="${properties.columns=='2'}">
+<sly data-sly-resource="${'container' @ resourceType='training/components/container'}"></sly>
+<sly data-sly-resource="${'container2' @ resourceType='training/components/container'}"></sly>
+</div>
+
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${template.placeholder @ isEmpty=!properties.columns, classAppend='cmp-columns'}">
+</sly>
