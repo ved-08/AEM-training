@@ -1,0 +1,17 @@
+<sly data-sly-use.modelObject="com.training.core.models.PageHero>
+
+<sly data-sly-test.imageUpload="${'{0}{1}' @ format=[resource.path, '/file']}"/>
+<sly data-sly-test.imagePath="${properties.fileReference || imageUpload}"/>
+	<div class=" width-full${!wcmmode.disabled ? ' cq-dd-image' : ''}"
+   		 style="${'background-image:url({0});' @ format = imagePath, context='styleString' }">
+
+
+    <div class="pagehero">
+        <img  src="https://www.apple.com/newsroom/images/product/apple-tv-plus/lifestyle-/Apple-TV-plus-MLB-September-schedule-hero_big.jpg.large.jpg" alt="Hero Image">
+            <div class="pagehero-content">
+                <h1>${properties.title}</h1>
+                <p>${properties.heading}</p>
+            </div>
+    </div>
+    </div>
+</sly>

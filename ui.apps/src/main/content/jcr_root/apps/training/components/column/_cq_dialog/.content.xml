@@ -45,7 +45,7 @@
                                                         text="{Long}2"
                                                         value="{Long}2"/>
                                                     <_x0033_column
-                                                        granite:hide="${cqDesign.disableStatic}"
+                                                        granite:hide="${cqDesign.disableChildren}"
                                                         jcr:primaryType="nt:unstructured"
                                                         text="{Long}3"
                                                         value="{Long}3"/>

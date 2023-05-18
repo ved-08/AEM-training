@@ -1,6 +1,3 @@
-
-<body>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <div class="counter">
     <div class="insta">
@@ -17,33 +14,3 @@
       <h1 class="twitter-counter">1500</h1>
     </div>
   </div>
-
-</body>
-
-
-
-<script>
-
-const instaEle = document.querySelector('.instagram-counter');
-const twitterEle = document.querySelector('.twitter-counter');
-const youtubeEle = document.querySelector('.youtube-counter');
-
-let times = 0;
-
-let id = setInterval(function(){
-  instaEle.textContent = times*300;
-  youtubeEle.textContent = times * 150;
-  twitterEle.textContent = times * 15;
-  times++;
-  if(times==101){
-    window.clearInterval(id)
-  }
-},20)
-
-</script>
-
-
-
-
-
-
