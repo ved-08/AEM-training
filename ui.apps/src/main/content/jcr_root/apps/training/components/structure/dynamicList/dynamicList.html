@@ -1,0 +1,5 @@
+<div data-sly-use.model="com.training.core.models.DynamicList">
+    <div data-sly-repeat="${model.pg}">
+        <a href="${item.path @ extension='html'}">${item.title}</a>
+        </div>
+</div>
