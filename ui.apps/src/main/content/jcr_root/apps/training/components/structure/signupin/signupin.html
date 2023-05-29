@@ -1,0 +1,20 @@
+
+<body>
+    <h1>Login</h1>
+    <form method="post" action="/bin/login">
+        <input type="hidden" name="action" value="login">
+        <label>Username: <input type="text" name="username"></label><br>
+        <label>Password: <input type="password" name="password"></label><br>
+        <input type="submit" value="Login">
+    </form>
+
+    <h1>Sign-up</h1>
+    <form method="post" action="/bin/signup">
+        <input type="hidden" name="action" value="signup">
+        <label>Username: <input type="text" name="username"></label><br>
+        <label>Password: <input type="password" name="password"></label><br>
+        <label>Email: <input type="text" name="email"></label><br>
+        <input type="submit" value="Sign-up">
+    </form>
+</body>
+</html>
