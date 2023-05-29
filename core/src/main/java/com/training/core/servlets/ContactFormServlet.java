@@ -27,7 +27,7 @@ public class ContactFormServlet extends SlingAllMethodsServlet{
 
     private static final long serialVersionUID = 1L;
 
-    private static final String CONTACT_US_PATH = "/content/contact-us";
+    private static final String CONTACT_US_PATH = "/content/usergenerated/contact-us";
 
 
 
@@ -46,6 +46,8 @@ public class ContactFormServlet extends SlingAllMethodsServlet{
             // Get form data
             String name = request.getParameter("name");
             String email = request.getParameter("email");
+            String country=request.getParameter("country");
+            String state=request.getParameter("state");
             String message = request.getParameter("message");
 
             // Create path in the repository for contact form submissions
@@ -55,14 +57,16 @@ public class ContactFormServlet extends SlingAllMethodsServlet{
             // Store form data in repository
             submissionNode.setProperty("name", name);
             submissionNode.setProperty("email", email);
+            submissionNode.setProperty("country", country);
+            submissionNode.setProperty("state", state);
             submissionNode.setProperty("message", message);
             session.save();
 
             // Return success response
-            JSONObject responseJson = new JSONObject();
-            responseJson.put("success", true);
-            responseJson.put("message", "Form submission successful");
-            out.println(responseJson.toString());
+//            JSONObject responseJson = new JSONObject();
+//            responseJson.put("success", true);
+//            responseJson.put("message", "Form submission successful");
+//            out.println(responseJson.toString());
 
         } catch (Exception e) {
             // Return error response
