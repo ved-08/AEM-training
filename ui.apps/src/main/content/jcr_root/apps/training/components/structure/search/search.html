@@ -1,0 +1,45 @@
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<body>
+<div>
+	<input type="text" id="searchInput" placeholder="Enter search query">
+	<button id="searchButton">Search</button>
+</div>
+
+<div id="searchResults"></div>
+
+<script>
+        $(document).ready(function() {
+            $("#searchButton").on("click", function() {
+                var searchQuery = $("#searchInput").val();
+
+                $.ajax({
+                    url: "/content/training/us/en/practice-page/jcr:content.search.json",
+                    type: "GET",
+                    dataType: "json",
+                    data: { searchText: searchQuery },
+                    success: function(response) {
+                        // Clear previous results
+                        $("#searchResults").empty();
+
+                        // Process search results
+                        if (response && response.length > 0) {
+                            response.forEach(response, function(index, item) {
+                                var resultItem = "<div><strong>Title:</strong> " + item.title + "</div>";
+                                resultItem += "<div><strong>Path:</strong> " + item.path + "</div>";
+                                $("#searchResults").append(resultItem);
+                            });
+                        } else {
+                            $("#searchResults").text("No results found.");
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                        $("#searchResults").text("Error occurred during search.");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+

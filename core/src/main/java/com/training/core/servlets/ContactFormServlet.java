@@ -63,7 +63,7 @@ public class ContactFormServlet extends SlingAllMethodsServlet{
             session.save();
 
             // Return success response
-//            JSONObject responseJson = new JSONObject();
+            JSONObject responseJson = new JSONObject();
 //            responseJson.put("success", true);
 //            responseJson.put("message", "Form submission successful");
 //            out.println(responseJson.toString());
