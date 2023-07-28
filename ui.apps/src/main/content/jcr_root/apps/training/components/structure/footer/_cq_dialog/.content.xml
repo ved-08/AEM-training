@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Image and Icon List"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[bluescope.editor]">
+    <content
+        granite:class="cmp-embed__editor"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <tab1
+                        granite:id="icon-list-type-selection"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Columns"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <well
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/well"
+                                fieldLabel="List Selection">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <options
+                                        granite:class="foundation-toggleable cmp-teaser__editor-multifield_actions"
+                                        granite:hide="${cqDesign.actionsDisabled}"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Add Columns"
+                                        validation="3">
+                                        <field
+                                            granite:class="cmp-teaser__editor-action"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            name="./options">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <title
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Column Title"
+                                                            name="./columnTitle"
+                                                            useFixedInlineToolbar="{Boolean}true"/>
+                                                        <columnType
+                                                            granite:class="cq-dialog-dropdown-showhide"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            name="./columnType"
+                                                            text="Column Type">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <links
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Links "
+                                                                    value="links"/>
+                                                                <text
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Text"
+                                                                    value="text"/>
+                                                            </items>
+                                                            <granite:data
+                                                                jcr:primaryType="nt:unstructured"
+                                                                cq-dialog-dropdown-showhide-target=".column-type-show-hide"/>
+                                                        </columnType>
+                                                        <linkswell
+                                                            granite:class="hide column-type-show-hide"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                            fieldLabel="Links">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <optionlink
+                                                                    granite:class="foundation-toggleable cmp-teaser__editor-multifield_actions"
+                                                                    granite:hide="${cqDesign.actionsDisabled}"
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                                    composite="{Boolean}true"
+                                                                    cq-msm-lockable="{Boolean}true"
+                                                                    cq-msm-lockableUi="{Boolean}true"
+                                                                    fieldLabel="Column Description"
+                                                                    name="./option1Items"
+                                                                    validation="3">
+                                                                    <field
+                                                                        granite:class="cmp-teaser__editor-action"
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                        name="./optionlink">
+                                                                        <items jcr:primaryType="nt:unstructured">
+                                                                            <column
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                                                <items jcr:primaryType="nt:unstructured">
+                                                                                    <title
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                        fieldLabel="Sub Heading"
+                                                                                        name="./subHeading"
+                                                                                        useFixedInlineToolbar="{Boolean}true"/>
+                                                                                    <link
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                                        fieldLabel="Link"
+                                                                                        name="./link"
+                                                                                        useFixedInlineToolbar="{Boolean}true"/>
+                                                                                </items>
+                                                                            </column>
+                                                                        </items>
+                                                                    </field>
+                                                                </optionlink>
+                                                            </items>
+                                                            <granite:data
+                                                                jcr:primaryType="nt:unstructured"
+                                                                showhidetargetvalue="links"/>
+                                                        </linkswell>
+                                                        <textwell
+                                                            granite:class="hide column-type-show-hide"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                            fieldLabel="Text">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <title
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldLabel="Text"
+                                                                    name="./textField"
+                                                                    useFixedInlineToolbar="{Boolean}true"/>
+                                                            </items>
+                                                            <granite:data
+                                                                jcr:primaryType="nt:unstructured"
+                                                                showhidetargetvalue="text"/>
+                                                        </textwell>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                        <granite:data jcr:primaryType="nt:unstructured"/>
+                                    </options>
+                                </items>
+                            </well>
+                        </items>
+                    </tab1>
+                    <tab2
+                        granite:id="icon-list-type-selection"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Social Links"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <well
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/well"
+                                fieldLabel="List Selection 2">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <list-type
+                                        granite:class="cq-dialog-dropdown-showhide"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        cq-dialog-dropdown-showhide-target=".icon-list-type-section-show-hide"
+                                        fieldLabel="List Type"
+                                        name="./listType">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <texticonlist
+                                                jcr:primaryType="nt:unstructured"
+                                                forceIgnoreFreshness="{Boolean}true"
+                                                selected="{Boolean}true"
+                                                text="Text and Icon list"
+                                                value="text-icon-list"/>
+                                            <imageiconlist
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Image and Icon list"
+                                                value="image-icon-list"/>
+                                            <twocolumniconlist
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Two Column Icon List"
+                                                value="two-column-icon-list"/>
+                                        </items>
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            cq-dialog-dropdown-showhide-target=".icon-list-type-section-show-hide"/>
+                                    </list-type>
+                                    <backgroundcolor
+                                        granite:class="icon-list-type-section-show-hide"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <column
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <cardbackgroundcolor
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                        fieldLabel="Card Background Color"
+                                                        name="./cardbackgroundcolor">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <nobackgroundcolor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="No background color"
+                                                                value="bg-no-color-img-icon"/>
+                                                            <blue
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Blue"
+                                                                value="bs-imageiconblue"/>
+                                                            <grey
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Grey"
+                                                                value="bs-imageicongrey"/>
+                                                        </items>
+                                                    </cardbackgroundcolor>
+                                                </items>
+                                            </column>
+                                        </items>
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            showhidetargetvalue="image-icon-list"/>
+                                    </backgroundcolor>
+                                </items>
+                            </well>
+                        </items>
+                    </tab2>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

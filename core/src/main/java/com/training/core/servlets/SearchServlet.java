@@ -68,6 +68,7 @@ public class SearchServlet extends SlingSafeMethodsServlet {
                     title = pageNode.getProperty("jcr:title").getString();
                 }
                 String path = pageNode.getPath();
+                log.info("page is {}");
                 if (!title.isEmpty()) {
 
                     JSONObject jsonObject = new JSONObject();
@@ -78,6 +79,9 @@ public class SearchServlet extends SlingSafeMethodsServlet {
 
                 }
             }
+
+
+
 
 
             String jsonResponse = jsonArray.toString();
